@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="css/style.css" />
     <title>Momentum App html</title>
 </head>
 <body>
@@ -16,9 +16,11 @@
         placeholder="What is your name?" />
         <button>Log In</button>
     </form>
+    <h2 id="clock">00:00</h2>
     <h1 id="greeting" class="hidden"></h1>
 <!--input의 유효성을 검사하기 위해서는 form태그를 사용해야 한다. input태그 전체를 form태그를 감싸준다.
 input태그에 값이 입력되고 엔터만 누르면 자동으로 form이 submit되어 별도로 버튼에 이벤트를 달아주지 않아도 된다.-->
-    <script src="app.js"></script>
+    <script src="js/greetings.js"></script>
+    <script src="js/clock.js"></script>
 </body>
 </html>
