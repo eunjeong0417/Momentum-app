@@ -13,7 +13,9 @@ function handleClick (event) {
     console.log(username);
     greeting.innerText = "hello " + username;
     greeting.classList.remove("hidden");
+    localStorage.setItem("username", username);
 }
+/*localstorage에 저장될 값의 이름 (key)을 정해주고 그 다음에는 값인 username을 적어준다 */
 
 
 loginForm.addEventListener("submit", handleClick );
