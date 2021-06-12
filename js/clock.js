@@ -13,9 +13,10 @@ function getClock () {
 위의 getClock함수에서는 시간이 숫자이기 때문에 앞에 String으로 감싸서 문자열로 만들어준 뒤 padStart함수를 적용한다*/
 
 getClock();
-/*setInterval(getClock, 1000);*/
+setInterval(getClock, 1000);
 /*setInterval함수를 사용하지 않으면 한번만 시간이 출력된다 */
 
 /*setInterval(hello, 5000); 먼저 호출하고자 하는 함수명 hello를 쓰고 원하는 시간 간격을 쓴다
 
 setTimeout(hello, 5000);*/
+
