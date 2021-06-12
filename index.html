@@ -4,9 +4,20 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Momentum App</title>
+    <link rel="stylesheet" href="style.css" />
+    <title>Momentum App html</title>
 </head>
 <body>
-    
+    <form id="login-form">
+        <input 
+        required
+        maxlength="8"
+        type="Text" 
+        placeholder="What is your name?" />
+        <button>Log In</button>
+    </form>
+<!--input의 유효성을 검사하기 위해서는 form태그를 사용해야 한다. input태그 전체를 form태그를 감싸준다.
+input태그에 값이 입력되고 엔터만 누르면 자동으로 form이 submit되어 별도로 버튼에 이벤트를 달아주지 않아도 된다.-->
+    <script src="app.js"></script>
 </body>
 </html>
