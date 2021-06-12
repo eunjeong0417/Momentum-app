@@ -1,5 +1,6 @@
 const loginForm = document.querySelector("#login-form");
 const link = document.querySelector("a");
+const greeting = document.querySelector("#greeting");
 
 const loginInput = loginForm.querySelector("input");
 const loginButton = loginForm.querySelector("button");
@@ -7,16 +8,16 @@ const loginButton = loginForm.querySelector("button");
 
 function handleClick (event) {
     event.preventDefault();
-    console.log(loginInput.value);
+    const username = loginInput.value;
+    loginForm.classList.add("hidden");
+    console.log(username);
+    greeting.innerText = "hello " + username;
+    greeting.classList.remove("hidden");
 }
 
-function handleLink (event) {
-    console.log(event);
-    alert('hello');
-}
 
 loginForm.addEventListener("submit", handleClick );
-link.addEventListener("click", handleLink)
+
 
 /*form태그에 이벤트를 걸어준다.
 엔터를 누르거나 버튼이 클릭되면 handleClick이 실행된다.
