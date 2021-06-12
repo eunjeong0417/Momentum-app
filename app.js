@@ -1,14 +1,23 @@
-const loginForm = document.getElementById("login-form");
+const loginForm = document.querySelector("#login-form");
+const link = document.querySelector("a");
 
 const loginInput = loginForm.querySelector("input");
 const loginButton = loginForm.querySelector("button");
 
-function handleClick () {
+
+function handleClick (event) {
     event.preventDefault();
-    const username = loginInput.value;
-    console.log(username);    
+    console.log(loginInput.value);
 }
 
-loginButton.addEventListener("click", handleClick);
+function handleLink (event) {
+    console.log(event);
+    alert('hello');
+}
 
-/*form태그로 input태그 전체를 감싸준경우 엔터를 누르고 input에 입력된 값이 없으면 자동으로 submit이 되기 때문에 버튼에 click이벤트를 주지 않아도 된다 */
+loginForm.addEventListener("submit", handleClick );
+link.addEventListener("click", handleLink)
+
+/*form태그에 이벤트를 걸어준다.
+엔터를 누르거나 버튼이 클릭되면 handleClick이 실행된다.
+기본적으로 실행되는 이벤트를 막고 싶다면 preventDefault를 넣어주면 된다*/
