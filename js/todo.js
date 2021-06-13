@@ -1,17 +1,31 @@
 const todoForm = document.getElementById("todo-form");
 const todoList = document.getElementById("todo-list");
-const todoInput = todoForm.querySelector("input");
+const todoInput = document.getElementById("todo-form-input");
 const todoUl = document.getElementById("todo-list");
+
+
+function handleButton (event) {
+    todoUl.removeChild(event.target.parentElement);
+}
+
+/*event가 발생한 버튼의 parentElement인 list태그를 가져온다
+event.target.parentElement 는 곧 list태그.
+ul태그에서 list태그를 삭제시켜준다 */
 
 function paintToDo(inputValue){
     const li = document.createElement("li");
     const span = document.createElement("span");
-    li.appendChild(span);
     span.innerText = inputValue;
-       /*만든 list태그 안에 input의 값이 들어갈 수 있도록 만든다 */ 
+    const button = document.createElement("button");
+    button.innerText = "delete";
+    button.addEventListener("click", handleButton);
+    li.appendChild(span)
+    li.appendChild(button)
     todoUl.appendChild(li);
     console.log(todoUl);
 }
+
+/*만든 list태그 안에 input의 값이 들어갈 수 있도록 만든다 */ 
 
 /*createElement로 list 태그와 span 태그를 만들어준다. 그리고 맨 나중에 ul태그에 appendChild로 li태그를 추가해준다. */
 
@@ -27,7 +41,12 @@ function handleTodo (event) {
 
 
 
-todoForm.addEventListener("submit",handleTodo )
+
+
+todoForm.addEventListener("submit", handleTodo )
+
 
 /*form태그에 submit이벤트를 걸어준다 */
+
+
 
