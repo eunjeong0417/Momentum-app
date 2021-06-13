@@ -12,6 +12,9 @@ const randomImg = (images[Math.floor(Math.random() * images.length)]);
 /*자바스크립트에서 생성해서 html에 추가해준다 */
 
 const chosenImg = document.createElement("img");
+chosenImg.classList.add("bgimage");
+
+
 
 chosenImg.src = `img/${randomImg}`;
 
