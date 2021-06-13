@@ -2,6 +2,7 @@ const todoForm = document.getElementById("todo-form");
 const todoList = document.getElementById("todo-list");
 const todoInput = document.getElementById("todo-form-input");
 const todoUl = document.getElementById("todo-list");
+const toDo = [];
 
 
 function handleButton (event) {
@@ -12,17 +13,30 @@ function handleButton (event) {
 event.target.parentElement 는 곧 list태그.
 ul태그에서 list태그를 삭제시켜준다 */
 
+function saveTodos () {
+    localStorage.setItem("todos", JSON.stringify(toDo) );
+}
+
+    /*JSON.stringify()를 사용하면 ()안에 배열을 string으로 만들어준다. 그래서 string으로 만들고 싶은 배열을 ()안에 넣는다 */
+
 function paintToDo(inputValue){
     const li = document.createElement("li");
     const span = document.createElement("span");
     span.innerText = inputValue;
     const button = document.createElement("button");
     button.innerText = "delete";
+
     button.addEventListener("click", handleButton);
+
+
     li.appendChild(span)
     li.appendChild(button)
     todoUl.appendChild(li);
     console.log(todoUl);
+
+    toDo.push(inputValue);
+    saveTodos();
+    /*localStorage에는 배열을 저장할 수 없고 텍스트만 저장할 수 있다 */
 }
 
 /*만든 list태그 안에 input의 값이 들어갈 수 있도록 만든다 */ 
@@ -41,9 +55,9 @@ function handleTodo (event) {
 
 
 
+localStorage.getItem("storage");
 
-
-todoForm.addEventListener("submit", handleTodo )
+todoForm.addEventListener("submit", handleTodo );
 
 
 /*form태그에 submit이벤트를 걸어준다 */
