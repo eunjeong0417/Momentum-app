@@ -1,5 +1,4 @@
 const loginForm = document.querySelector("#login-form");
-const link = document.querySelector("a");
 const greeting = document.querySelector("#greeting");
 
 const loginInput = loginForm.querySelector("input");
